@@ -31,7 +31,7 @@ function helloAgain() {
 
   ///////////////////////////// DO NOT MODIFY
   check("helloAgain", name); // DO NOT MODIFY
-  ///////////////////////////// DO NOT MODIFY
+  ///////////////////////////// DO NOT MODIFYw
 }
 
 /*
@@ -48,7 +48,9 @@ function celsius() {
   // (inclusive), and rounds this value to 2 decimal places.
 
   // WRITE YOUR EXERCISE 3 CODE HERE
-
+  var fahr = ((cels * 9/5) + 32).toFixed(2);
+  p= document.getElementById("output3");
+  p.innerHTML = cels + " degrees Celsius equals " + fahr + " degrees Fahrenheit.";
   ////////////////////////// DO NOT MODIFY
   check("celsius", cels); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
@@ -68,7 +70,9 @@ function fahrenheit() {
   // (inclusive), and rounds this value to 2 decimal places.
 
   // WRITE YOUR EXERCISE 4 CODE HERE
-
+  var cels = ((fahr - 32) * 5/9).toFixed(2);
+  p= document.getElementById("output4");
+  p.innerHTML = fahr + " degrees Fahrenheit equals " + cels + " degrees Celsius.";
   ///////////////////////////// DO NOT MODIFY
   check("fahrenheit", fahr); // DO NOT MODIFY
   ///////////////////////////// DO NOT MODIFY
