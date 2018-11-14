@@ -96,7 +96,13 @@ function inches() {
   ////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 5 CODE HERE
+  let numberMiles = (inches - inches % 63360)/(63360);
+  let numberYards = (inches - (numberMiles * 63360) - (inches % 36) /(36));
+  let numberFeet = (inches - (numberMiles * 63360) - (numberYards * 36) - (inches % 12)/(12));
+  inches = (inches - (numberMiles * 63360) - (numberYards * 36) - (numberFeet * 12) - (inches % 1)/(1));
 
+  p= document.getElementById("output5");
+  p.innerHTML = `Miles: ${numberMiles}<br> Yards: ${numberYards}<br> Feet: ${numberFeet}<br> Inches: ${inches}`;
   ////////////////////////// DO NOT MODIFY
   check("inches", input); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
