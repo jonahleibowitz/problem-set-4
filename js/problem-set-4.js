@@ -97,12 +97,12 @@ function inches() {
 
   // WRITE YOUR EXERCISE 5 CODE HERE
   let numberMiles = (inches - inches % 63360)/(63360);
-  let numberYards = (inches - (numberMiles * 63360) - (inches % 36) /(36));
-  let numberFeet = (inches - (numberMiles * 63360) - (numberYards * 36) - (inches % 12)/(12));
-  inches = (inches - (numberMiles * 63360) - (numberYards * 36) - (numberFeet * 12) - (inches % 1)/(1));
+  let numberYards = (inches - (numberMiles * 63360) - inches % 36)/(36);
+  let numberFeet = ((inches - (numberMiles * 63360) - (numberYards * 36) - (inches % 12))/(12));
+  inches = ((inches - (numberMiles * 63360) - (numberYards * 36) - (numberFeet * 12) - (inches % 1))/(1));
 
   p= document.getElementById("output5");
-  p.innerHTML = `Miles: ${numberMiles}<br> Yards: ${numberYards}<br> Feet: ${numberFeet}<br> Inches: ${inches}`;
+  p.innerHTML = `Miles: ${numberMiles}<br>Yards: ${numberYards}<br>Feet: ${numberFeet}<br>Inches: ${inches}`;
   ////////////////////////// DO NOT MODIFY
   check("inches", input); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
@@ -126,7 +126,12 @@ function centimeters() {
   /////////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 6 CODE HERE
+  let numberKilometers = (centimeters - centimeters % 100000)/(100000);
+  let numberMeters = (centimeters - numberKilometers * 100000 - centimeters % 100)/(100);
+  let numberCentimeters = ((centimeters - (numberKilometers * 100000) - (numberMeters * 100) - (centimeters % 1))/(1));
 
+  p= document.getElementById("output6");
+  p.innerHTML = `Kilometers: ${numberKilometers}<br>Meters: ${numberMeters}<br>Centimeters: ${numberCentimeters}`;
   /////////////////////////////// DO NOT MODIFY
   check("centimeters", input); // DO NOT MODIFY
   /////////////////////////////// DO NOT MODIFY
@@ -150,7 +155,15 @@ function fluidOunces() {
   /////////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 7 CODE HERE
+  let numberGallons = (fluidOunces - fluidOunces % 128)/(128);
+  let numberQuarts = (fluidOunces - (numberGallons * 128) - fluidOunces % 32)/(32);
+  let numberPints = ((fluidOunces - (numberGallons * 128) - (numberQuarts * 32) - (fluidOunces % 12))/(12));
+  let numberCups = ((fluidOunces - (numberGallons * 128) - (numberQuarts * 32) - (fluidOunces % 12))/(12));
+  let numberOunces = ((fluidOunces - (numberGallons * 128) - (numberQuarts * 32) - (fluidOunces % 12))/(12));
+  fluidOunces = ((fluidOunces - (numberGallons * 128) - (numberQuarts * 32) - (numberFeet * 12) - (fluidOunces % 1))/(1));
 
+  p= document.getElementById("output7");
+  p.innerHTML = `Gallons: ${numberGallons}<br>Quarts: ${numberQuarts}<br>Pints: ${numberPints}<br>Cups: ${numberCups}<br>Fluid Ounces: ${numberOunces}`;
   /////////////////////////////// DO NOT MODIFY
   check("fluidOunces", input); // DO NOT MODIFY
   /////////////////////////////// DO NOT MODIFY
