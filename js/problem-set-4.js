@@ -191,7 +191,7 @@ function ounces() {
   let numberOunces = ((ounces - (numberTons * 32000) - (numberPounds * 16) - (ounces % 1))/(1));
 
   p= document.getElementById("output8");
-  p.innerHTML = `Kilometers: ${numberTons}<br>Meters: ${numberPounds}<br>Centimeters: ${numberOunces}`;
+  p.innerHTML = `Tons: ${numberTons}<br>Pounds: ${numberPounds}<br>Ounces: ${numberOunces}`;
   ////////////////////////// DO NOT MODIFY
   check("ounces", input); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
@@ -215,7 +215,14 @@ function money() {
   /////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 9 CODE HERE
+  let numberDollars = (pennies - pennies % 100)/(100);
+  let numberQuarters = (pennies - (numberDollars * 100) - pennies % 25)/(25);
+  let numberDimes = ((pennies - (numberDollars * 100) - (numberQuarters * 25) - (pennies % 10))/(10));
+  let numberNickels = ((pennies - (numberDollars * 100) - (numberQuarters * 25) - (numberDimes * 10) - (pennies % 5))/(5));
+  let numberPennies = ((pennies - (numberDollars * 100) - (numberQuarters * 25) - (numberDimes * 10) - (numberNickels * 5) - (pennies % 1))/(1));
 
+  p= document.getElementById("output7");
+  p.innerHTML = `Dollars: ${numberDollars}<br>Quarters: ${numberQuarters}<br>Dimes: ${numberDimes}<br>Nickels: ${numberNickels}<br>Pennies: ${numberPennies}`;
   ///////////////////////// DO NOT MODIFY
   check("money", input); // DO NOT MODIFY
   ///////////////////////// DO NOT MODIFY
