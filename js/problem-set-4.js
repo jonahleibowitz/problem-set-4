@@ -186,7 +186,12 @@ function ounces() {
   ////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 8 CODE HERE
+  let numberTons = (ounces - ounces % 32000)/(32000);
+  let numberPounds = (ounces - numberTons * 32000 - ounces % 16)/(16);
+  let numberOunces = ((ounces - (numberTons * 32000) - (numberPounds * 16) - (ounces % 1))/(1));
 
+  p= document.getElementById("output8");
+  p.innerHTML = `Kilometers: ${numberTons}<br>Meters: ${numberPounds}<br>Centimeters: ${numberOunces}`;
   ////////////////////////// DO NOT MODIFY
   check("ounces", input); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
