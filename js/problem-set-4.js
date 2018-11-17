@@ -157,10 +157,9 @@ function fluidOunces() {
   // WRITE YOUR EXERCISE 7 CODE HERE
   let numberGallons = (fluidOunces - fluidOunces % 128)/(128);
   let numberQuarts = (fluidOunces - (numberGallons * 128) - fluidOunces % 32)/(32);
-  let numberPints = ((fluidOunces - (numberGallons * 128) - (numberQuarts * 32) - (fluidOunces % 12))/(12));
-  let numberCups = ((fluidOunces - (numberGallons * 128) - (numberQuarts * 32) - (fluidOunces % 12))/(12));
-  let numberOunces = ((fluidOunces - (numberGallons * 128) - (numberQuarts * 32) - (fluidOunces % 12))/(12));
-  fluidOunces = ((fluidOunces - (numberGallons * 128) - (numberQuarts * 32) - (numberFeet * 12) - (fluidOunces % 1))/(1));
+  let numberPints = ((fluidOunces - (numberGallons * 128) - (numberQuarts * 32) - (fluidOunces % 16))/(16));
+  let numberCups = ((fluidOunces - (numberGallons * 128) - (numberQuarts * 32) - (numberPints * 16) - (fluidOunces % 8))/(8));
+  let numberOunces = ((fluidOunces - (numberGallons * 128) - (numberQuarts * 32) - (numberPints * 16) - (numberCups * 8) - (fluidOunces % 1))/(1));
 
   p= document.getElementById("output7");
   p.innerHTML = `Gallons: ${numberGallons}<br>Quarts: ${numberQuarts}<br>Pints: ${numberPints}<br>Cups: ${numberCups}<br>Fluid Ounces: ${numberOunces}`;
