@@ -246,14 +246,21 @@ function change() {
   ////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 10 CODE HERE
-  let quarters =Math.floor(amount/0.25);
-  let dimes = Math.floor((amount - (quarters*0.25))/0.1);
-  let nickels = Math.floor((amount - (quarters*0.25) - (dimes*0.1))/0.05);
-  let pennies = Math.floor((amount - (quarters*0.25) - (dimes*0.1) - (nickels*0.05))/0.01);
+  amount = (amount * 100);
+  let quarters = Math.floor(amount/2500);
+  let dimes = Math.floor((amount - (quarters*25))/10);
+  let nickels = Math.floor((amount - (quarters*25) - (dimes*10))/5);
+  let pennies = Math.floor((amount - (quarters*25) - (dimes*10) - (nickels*5))/1);
   let coins = quarters + dimes + nickels + pennies;
-
+  if (coins = 1) {
+    let coinResult ="coin";
+  } else {
+    let coinResult ="coins";
+    }
+  
+  
   p= document.getElementById("output10");
-  p.innerHTML = coins+ " coins.";
+  p.innerHTML = coins+ " coinResult.";
   ////////////////////////// DO NOT MODIFY
   check("change", input); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
