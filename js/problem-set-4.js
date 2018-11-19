@@ -4,7 +4,7 @@
 
 function hello() {
   var p=document.getElementById("output1");
-  p.innerHTML="Hello, AP Computer Science Principles!";
+  p.innerHTML=("Hello, AP Computer Science Principles!");
   // WRITE YOUR EXERCISE 1 CODE HERE
 
   ////////////////// DO NOT MODIFY
@@ -155,15 +155,14 @@ function fluidOunces() {
   /////////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 7 CODE HERE
-  let numberGallons = (fluidOunces - fluidOunces % 128)/(128);
-  let numberQuarts = (fluidOunces - (numberGallons * 128) - fluidOunces % 32)/(32);
-  let numberPints = ((fluidOunces - (numberGallons * 128) - (numberQuarts * 32) - (fluidOunces % 12))/(12));
-  let numberCups = ((fluidOunces - (numberGallons * 128) - (numberQuarts * 32) - (fluidOunces % 12))/(12));
-  let numberOunces = ((fluidOunces - (numberGallons * 128) - (numberQuarts * 32) - (fluidOunces % 12))/(12));
-  fluidOunces = ((fluidOunces - (numberGallons * 128) - (numberQuarts * 32) - (numberFeet * 12) - (fluidOunces % 1))/(1));
+  let numberGallons =Math.floor(fluidOunces/128);
+  let numberQuarts = Math.floor((fluidOunces - numberGallons*128)/32);
+  let numberPints = Math.floor((fluidOunces - (numberGallons*128) - (numberQuarts*32))/16);
+  let numberCups = Math.floor((fluidOunces - (numberGallons*128) - (numberQuarts*32) - (numberPints*16))/8);
+fluidOunces = Math.floor(fluidOunces-(numberGallons*128)-(numberQuarts*32)-(numberPints*16)-(numberCups*8));
 
   p= document.getElementById("output7");
-  p.innerHTML = `Gallons: ${numberGallons}<br>Quarts: ${numberQuarts}<br>Pints: ${numberPints}<br>Cups: ${numberCups}<br>Fluid Ounces: ${numberOunces}`;
+  p.innerHTML = `Gallons: ${numberGallons}<br>Quarts: ${numberQuarts}<br>Pints: ${numberPints}<br>Cups: ${numberCups}<br>Fluid Ounces: ${fluidOunces}`;
   /////////////////////////////// DO NOT MODIFY
   check("fluidOunces", input); // DO NOT MODIFY
   /////////////////////////////// DO NOT MODIFY
@@ -187,7 +186,12 @@ function ounces() {
   ////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 8 CODE HERE
+  let numberTons =Math.floor(ounces/32000);
+  let numberPounds = Math.floor((ounces - numberTons*32000)/16);
+  ounces = Math.floor((ounces - (numberTons*32000) - (numberPounds*16)));
 
+  p= document.getElementById("output8");
+  p.innerHTML = `Tons: ${numberTons}<br>Pounds: ${numberPounds}<br>Ounces: ${ounces}`;
   ////////////////////////// DO NOT MODIFY
   check("ounces", input); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
