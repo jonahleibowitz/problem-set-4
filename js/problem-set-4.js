@@ -215,7 +215,14 @@ function money() {
   /////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 9 CODE HERE
+  let numberDollars =Math.floor(pennies/100);
+  let numberQuarters = Math.floor((pennies - numberDollars*100)/25);
+  let numberDimes = Math.floor((pennies - (numberDollars*100) - (numberQuarters*25))/10);
+  let numberNickels = Math.floor((pennies - (numberDollars*100) - (numberQuarters*25) - (numberDimes*10))/5);
+pennies = Math.floor(pennies-(numberDollars*100)-(numberQuarters*25)-(numberDimes*10)-(numberNickels*5));
 
+  p= document.getElementById("output9");
+  p.innerHTML = `Dollars: ${numberDollars}<br>Quarters: ${numberQuarters}<br>Dimes: ${numberDimes}<br>Nickels: ${numberNickels}<br>Pennies: ${pennies}`;
   ///////////////////////// DO NOT MODIFY
   check("money", input); // DO NOT MODIFY
   ///////////////////////// DO NOT MODIFY
@@ -239,7 +246,14 @@ function change() {
   ////////////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 10 CODE HERE
+  let quarters =Math.floor(amount/0.25);
+  let dimes = Math.floor((amount - (quarters*0.25))/0.1);
+  let nickels = Math.floor((amount - (quarters*0.25) - (dimes*0.1))/0.05);
+  let pennies = Math.floor((amount - (quarters*0.25) - (dimes*0.1) - (nickels*0.05))/0.01);
+  let coins = quarters + dimes + nickels + pennies;
 
+  p= document.getElementById("output10");
+  p.innerHTML = coins+ " coins.";
   ////////////////////////// DO NOT MODIFY
   check("change", input); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
