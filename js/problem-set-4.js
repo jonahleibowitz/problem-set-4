@@ -247,20 +247,19 @@ function change() {
 
   // WRITE YOUR EXERCISE 10 CODE HERE
   amount = (amount * 100);
-  let quarters = Math.floor(amount/2500);
+  let quarters = Math.floor(amount/25);
   let dimes = Math.floor((amount - (quarters*25))/10);
   let nickels = Math.floor((amount - (quarters*25) - (dimes*10))/5);
-  let pennies = Math.floor((amount - (quarters*25) - (dimes*10) - (nickels*5))/1);
+  let pennies = Math.floor((amount - (quarters*25) - (dimes*10) - (nickels*5)));
   let coins = quarters + dimes + nickels + pennies;
-  if (coins = 1) {
-    let coinResult ="coin";
-  } else {
-    let coinResult ="coins";
-    }
+  let coinResult =" coins.";
+  if (coins==1) {
+     coinResult =" coin.";
+  }
   
   
   p= document.getElementById("output10");
-  p.innerHTML = coins+ " coinResult.";
+  p.innerHTML = (coins + coinResult);
   ////////////////////////// DO NOT MODIFY
   check("change", input); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
